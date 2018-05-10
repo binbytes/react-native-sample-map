@@ -39,15 +39,6 @@ export default class Screen2 extends Component {
       { enableHighAccuracy: false, timeout: 200000, maximumAge: 1000 });
   }
 
-  onRegionChange(region, lastLat, lastLong) {
-    this.setState({
-      mapRegion: region,
-      // If there are no new values set the current ones
-      lastLat: lastLat || this.state.lastLat,
-      lastLong: lastLong || this.state.lastLong
-    });
-  }
-
   componentWillUnmount() {
     navigator.geolocation.clearWatch(this.watchID);
   }

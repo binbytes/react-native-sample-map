@@ -61,7 +61,6 @@ class DefaultMarkers extends React.Component {
         >
           {this.state.markers.map(marker => (
             <Marker
-            draggable
               key={marker.key}
               coordinate={marker.coordinate}
               pinColor={marker.color}

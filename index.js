@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import CustomMarkerMap from './src/CustomMarkerMap';
+import App from './src/CustomDirectionMap';
 
-AppRegistry.registerComponent('sample_map', () => CustomMarkerMap);
+AppRegistry.registerComponent('sample_map', () => App);
