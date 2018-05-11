@@ -1,62 +1,47 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {
   Platform,
   StyleSheet,
   Text,
   View
-} from 'react-native';
-import MapView, { Marker, Animated } from 'react-native-maps';
-import MapViewDirections from 'react-native-maps-directions';
+} from 'react-native'
+import MapView, { Marker } from 'react-native-maps'
+import MapViewDirections from 'react-native-maps-directions'
 
 import { API_KEY } from '../mix/config'
 
-const destination = { latitude: 22.328599, longitude: 70.769113 };
+const origin = {
+  latitude: 22.30122195579693,
+  longitude: 70.76267393802868,
+}
+const destination = { latitude: 22.328599, longitude: 70.769113 }
+
+const region = {
+  ...origin,
+  latitudeDelta: 0.00922 * 1.5,
+  longitudeDelta: 0.00421 * 1.5
+}
 
 export default class Screen2 extends Component {
-
-  constructor(props) {
-    super(props)
-    this.state = {
-      mapRegion: null,
-      lastLat: null,
-      lastLong: null
-    }
-  }
-
-  componentDidMount() {
-    this.watchID = navigator.geolocation.watchPosition((position) => {
-      let region = {
-        latitude: position.coords.latitude,
-        longitude: position.coords.longitude,
-        latitudeDelta: 0.00922 * 1.5,
-        longitudeDelta: 0.00421 * 1.5
-      }
-      this.setState({ mapRegion: region, lastLat: region.latitude, longitude: region.longitude })
-    },
-      (error) => this.setState({ error: error.message }),
-      { enableHighAccuracy: false, timeout: 200000, maximumAge: 1000 });
-  }
-
-  componentWillUnmount() {
-    navigator.geolocation.clearWatch(this.watchID);
-  }
 
   render() {
     return (
       <View style={styles.container}>
-        <Animated
+        <MapView
           style={{ flex: 1 }}
-          region={this.state.mapRegion}
+          region={region}
           showsUserLocation={true}
           followUserLocation={true}>
+          <Marker coordinate={origin} />
+          <Marker coordinate={destination} />
           <MapViewDirections
-            origin={this.state.mapRegion}
+            origin={origin}
             destination={destination}
             apikey={API_KEY}
             strokeWidth={5}
             strokeColor="hotpink"
           />
-        </Animated>
+        </MapView>
       </View>
     );
   }
@@ -66,4 +51,4 @@ const styles = StyleSheet.create({
   container: {
     flex: 1
   }
-});
+})
