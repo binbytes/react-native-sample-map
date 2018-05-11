@@ -25,7 +25,6 @@ export default class Screen2 extends Component {
 
   componentDidMount() {
     this.watchID = navigator.geolocation.watchPosition((position) => {
-      // Create the object to update this.state.mapRegion through the onRegionChange function
       let region = {
         latitude: position.coords.latitude,
         longitude: position.coords.longitude,
@@ -33,7 +32,6 @@ export default class Screen2 extends Component {
         longitudeDelta: 0.00421 * 1.5
       }
       this.setState({ mapRegion: region, lastLat: region.latitude, longitude: region.longitude })
-      // this.onRegionChange(region, region.latitude, region.longitude);
     },
       (error) => this.setState({ error: error.message }),
       { enableHighAccuracy: false, timeout: 200000, maximumAge: 1000 });

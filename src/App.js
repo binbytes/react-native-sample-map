@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { StackNavigator } from 'react-navigation';
+import { PermissionsAndroid, BackHandler } from 'react-native';
+import { createStackNavigator } from 'react-navigation';
 
 import Main from './MainScreen';
 import SimpleMap from './containers/SimpleMap';
@@ -7,10 +8,10 @@ import DirectionMap from './containers/DirectionMap';
 import CustomMarkerMap from './containers/CustomMarkerMap';
 import CustomDirectionMap from './containers/CustomDirectionMap';
 
-const RootNavigator = StackNavigator({
+const RootNavigator = createStackNavigator({
     Main: {
         screen: Main,
-        navigationOptions:{
+        navigationOptions: {
             header: null
         }
     },
@@ -41,6 +42,23 @@ const RootNavigator = StackNavigator({
 })
 
 export default class App extends Component {
+
+    async componentDidMount() {
+
+        const navCheck = await PermissionsAndroid.check('android.permission.ACCESS_FINE_LOCATION')
+
+        if (navCheck) {
+            return
+        } else {
+            const permission = await PermissionsAndroid.request('android.permission.ACCESS_FINE_LOCATION')
+            if(permission === PermissionsAndroid.RESULTS.GRANTED){
+                return
+            } else {
+                BackHandler.exitApp()
+            }
+        }
+    }
+
     render() {
         return (
             <RootNavigator />
