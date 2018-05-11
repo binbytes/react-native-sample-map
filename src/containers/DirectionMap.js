@@ -8,7 +8,7 @@ import {
 import MapView, { Marker, Animated } from 'react-native-maps';
 import MapViewDirections from 'react-native-maps-directions';
 
-import { API_KEY } from './mix/config'
+import { API_KEY } from '../mix/config'
 
 const destination = { latitude: 22.328599, longitude: 70.769113 };
 
