@@ -21,10 +21,10 @@ Before running this project, Set your **GoogleMap API key** in following files.
 
 > react-native run-android
 
-![Simple Map](https://lh3.googleusercontent.com/iGsHBs4rVU64i8KMRRFsWpSrPZRukG2SDjfzImeof8y33ZDV6x30azfWu3LSxKCU5AMVSxQOMpIt "Simple Map")
+![Simple Map](https://github.com/binbytes/react-native-sample-map/blob/master/screenshot/68747470733a2f2f6c68332e676f6f676c6575736572636f6e74656e742e636f6d2f69477348427334725655363469384b4d5252467357705372505a52756b473253446a667a496d656f66387933335a445636783330617a665775334c53784b435535414d565378514f4d704974.jpeg)
 
-![DirectionMap](https://lh3.googleusercontent.com/QgglZjVQ9HzdFvTvDd_iRlAss20OUk2kIhJQ6OEGDB8NjePurOaUI9IdvGK7SX2HkyDWfqg9hFqI "Direction Map")
+![DirectionMap](https://github.com/binbytes/react-native-sample-map/blob/master/screenshot/68747470733a2f2f6c68332e676f6f676c6575736572636f6e74656e742e636f6d2f5167676c5a6a565139487a644676547644645f69526c41737332304f556b326b49684a51364f45474442384e6a655075724f61554939496476474b37535832486b7944576671673968467149.jpeg?raw=true)
 
-![CustomMarker](https://lh3.googleusercontent.com/hASmHliVu6OEBMJCSviMt9VGLSQajvbSMEl2kZfJD6IQNXoS0cqiTvYPFqrVm7x2unD6X6pn2of9 "Custom Marker")
+![CustomMarker](https://github.com/binbytes/react-native-sample-map/blob/master/screenshot/68747470733a2f2f6c68332e676f6f676c6575736572636f6e74656e742e636f6d2f6841536d486c695675364f45424d4a435376694d743956474c5351616a7662534d456c326b5a664a443649514e586f533063716954765950467172566d377832756e44365836706e326f6639.gif?raw=true)
 
-![CustomDirection](https://lh3.googleusercontent.com/OTYmWWUwdRNZUDw-MMPCSVONdbc7KkZQl3sfE48EVhDN-PaKeH_nkVuLpL5QlagrPEPgzS8Q4bFb "Custom Direction")
+![CustomDirection](https://github.com/binbytes/react-native-sample-map/blob/master/screenshot/68747470733a2f2f6c68332e676f6f676c6575736572636f6e74656e742e636f6d2f4f54596d5757557764524e5a5544772d4d4d504353564f4e646263374b6b5a516c337366453438455668444e2d50614b65485f6e6b56754c704c35516c616772504550677a53385134624662.gif?raw=true)
